@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+body {
+  background-color: lightblue;
+}
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+
+  .card {
+    perspective: 1000px;
+    width: 40%;
+    .image {
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+
+      .flip-box-front {
+        position: absolute;
+        backface-visibility: hidden;
+        .flip-box-front-content {
+          position: relative;
+          .card-cover {
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: 0px 25px 26px -9px rgba(0, 0, 0, 0.75);
+          }
+
+          .chip {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            text-align: left;
+            img {
+              width: 100%;
+              max-width: 80px;
+            }
+          }
+          .card-type {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            text-align: right;
+            img {
+              width: 100%;
+              max-width: 105px;
+            }
+          }
+          .card-number {
+            position: absolute;
+            color: white;
+            top: 45%;
+            left: 5%;
+            text-align: justify;
+            font-size: 1.7vw;
+          }
+          .card-name {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            color: lightgray;
+            text-align: justify;
+            font-size: 1vw;
+
+            h1 {
+              color: white;
+              font-size: 1.7vw;
+            }
+          }
+          .expires {
+            position: absolute;
+            text-align: justify;
+            color: lightgray;
+            bottom: 5%;
+            right: 5%;
+            font-size: 1vw;
+
+            h1 {
+              color: white;
+              font-size: 1.7vw;
+            }
+          }
+        }
+      }
+
+      .flip-box-back {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        .flip-box-back-content {
+          position: relative;
+          .card-cover-back {
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: 0px 25px 26px -9px rgba(0, 0, 0, 0.75);
+          }
+          .black-line {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            height: 20%;
+            background-color: rgba(0, 0, 0, 0.75);
+          }
+          .cvv-text {
+            position: absolute;
+            right: 5%;
+            color: white;
+            top: 35%;
+            font-size: 1.5vw;
+          }
+          .cvv-area {
+            position: absolute;
+            width: 95%;
+            height: 20%;
+            height: 20%;
+            border-radius: 5px;
+            background-color: white;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            h1 {
+              font-size: 1.5vw;
+              padding-right: 5px;
+            }
+          }
+          .type {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            text-align: right;
+            img {
+              width: 30%;
+            }
+          }
+        }
+      }
+      &.flip {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+  .card-info {
+    background-color: white;
+    border-radius: 20px;
+    width: 60%;
+    padding: 70px 10px 10px 10px;
+    margin-top: -40px;
+    form {
+      width: 80%;
+      margin: auto;
+      input,
+      select {
+        margin: 10px 0 10px 0;
+        width: 100%;
+        height: 40px;
+        font-size: 1.5vw;
+      }
+      .cvv {
+        float: right;
+      }
+      .dates {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: linear-gradient(to right, #3f9ad1, #a364b3);
+        color: white;
+        &:focus {
+          box-shadow: 0px 0px 5px 1px black;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 60% !important;
+    .type {
+      width: 50% !important;
+    }
+  }
+  .card-info {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: 70% !important;
+    .card-number {
+      h1 {
+        font-size: 5vw !important;
+      }
+    }
+    .card-name {
+      font-size: 2vw !important;
+
+      h1 {
+        font-size: 3vw !important;
+      }
+    }
+    .expires {
+      font-size: 2vw !important;
+      h1 {
+        font-size: 3vw !important;
+      }
+    }
+
+    .chip {
+      width: 20% !important;
+    }
+    .card-type {
+      img {
+        width: 30% !important;
+      }
+    }
+    .cvv-code {
+      font-size: 3vw !important;
+    }
+    .type {
+      width: 50% !important;
+    }
+  }
+  .card-info {
+    width: 90% !important;
+   
+  }
+}

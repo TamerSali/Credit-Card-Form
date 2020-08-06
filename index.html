@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Cart</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="card">
+        <div class="image">
+          <div class="flip-box-front">
+            <div class="flip-box-front-content">
+              <img
+                src="./resource/card-cover.jpg"
+                alt="no-cover"
+                class="card-cover"
+              />
+              <div class="chip">
+                <img src="./resource/chip.png" alt="" />
+              </div>
+              <div class="card-type">
+                <img src="" id="cart-type-img" alt="" />
+              </div>
+              <div class="card-number">
+                <h1 class="card-number-text">#### #### #### ####</h1>
+              </div>
+              <div class="card-name">
+                <h3>Card Holder</h3>
+                <h1 class="card-name-text">FULL NAME</h1>
+              </div>
+              <div class="expires">
+                <h3>Expires</h3>
+                <h1>
+                  <span class="card-month">MM</span>/<span class="card-year"
+                    >YY</span
+                  >
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="flip-box-back">
+            <div class="flip-box-back-content">
+              <img
+                src="./resource/card-cover.jpg"
+                alt="no-cover"
+                class="card-cover-back"
+              />
+              <div class="black-line"></div>
+              <div class="cvv-text"><h3>CVV</h3></div>
+              <div class="cvv-area">
+                <h1 class="cvv-code"></h1>
+              </div>
+              <div class="type">
+                <img src="" id="cart-type-img" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <form autocomplete="off">
+          <label for="card-number">Card Number</label> <br />
+          <input
+            type="text"
+            name="card-number"
+            class="card-number-field"
+            maxlength="16"
+          />
+          <br />
+          <label for="card-name">Card Name</label> <br />
+          <input
+            type="text"
+            name="card-name"
+            class="card-name-field"
+            size="25"
+            maxlength="25"
+          />
+          <label>Expiration Date</label>
+          <label for="cvv" class="cvv">CVV</label>
+          <div class="dates">
+            <select name="month" class="month">
+              <option hidden>Month</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <select name="year" class="year">
+              <option hidden>Year</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+            </select>
+
+            <input
+              type="text"
+              name="cvv"
+              class="cvv-field"
+              maxlength="4"
+              size="4"
+            />
+          </div>
+          <button type="button">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
